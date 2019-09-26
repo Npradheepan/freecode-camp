@@ -1,0 +1,38 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+
+<header id="header">
+  <img src="#"id="header-img" alt="">
+  <nav id="nav-bar">
+    <a class= "nav-link"  href="#video-container">video</a> 
+    <a class= "nav-link" href="#video-container"></a> 
+    <a  class="nav-link"  href="#video-container"></a> 
+  </nav>
+</header>
+
+<!-- landing page video-->
+<div id="video-container">
+   <iframe width="420" height="315" id="video"
+  src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1">
+  </iframe>
+  <form action="https://www.freecodecamp.com/email-submit" id="form">
+    <input type="email" id="email" name="email" placeholder="Enter your email" request><br>
+    <input type="submit" id="submit" value="submit">
+  </form>
+</div>
+
+// css
+
+#video-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 3em 15% 0 15%;
+}
+
+
+@media only screen and (max-width: 420px) {
+   #video-container{
+     
+   }
+  }
