@@ -1,0 +1,27 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+</style>
+<body>
+    <header id="header">
+        <img src="#"id="header-img" alt="">
+        <nav id="nav-bar">
+            <a href="#video">video</a> 
+            <a href="#"></a> 
+            <a href="#"></a> 
+        </nav>
+    </header>
+
+//css
+
+#welcome-section {
+  box-sizing: border-box;
+  position: relative;
+  width: 100vw;
+  height:100vh;
+}
+
+@media only screen and (max-width: 420px) {
+  #welcome-section{
+    
+  }
+  }
