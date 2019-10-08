@@ -1,0 +1,51 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+<h1 id="title">Title</h1>
+<p id="description"> this one of the form concerpt</p>
+<form id="survey-form" action="#" method="GET">
+  <table>
+    <tbody>
+      <tr>
+        <td><label id="name-label" for="name">Name</label></td>
+        <td><input type="text" id="name" name="name" placeholder="Name" required></td>
+      </tr>
+      <tr>
+        <td><label id="email-label" for="email">Email</label></td>
+        <td><input type="email" name="email" id="email" placeholder="Email"required></td>
+      </tr> 
+      <tr>
+        <td><label id="number-label" for="number">Number</label></td>
+        <td><input type="number" name="number" id="number" min="0" max="99" placeholder="Number"></td>
+      </tr>
+      <tr>
+        <td><input type="radio" name="btn" value="1" ></td>
+         <td><input type="radio" name="btn" value="2" ></td>
+         <td><input type="radio" name="btn" value="3"></td>
+      </tr>
+      <tr>
+        <td>
+          <select id="dropdown" name="group1">
+            <option value="1">value1</option>
+            <option value="2">value2</option> 
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="sex" value="female">female</td>
+        <td><input type="checkbox" name="sex" value="male">male</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <textarea rows="4" cols="50"></textarea> 
+  <br>
+  <button id="submit" value="submit">Submit</button>
+</form>
+
+
+
+
+//css//
+
+#survey-form {
+  text-align: justify;
+}
