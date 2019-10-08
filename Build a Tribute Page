@@ -1,0 +1,25 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+<main id="main">
+  
+  <div class="header--bg-container">
+    <h1 id="title">Eltern-Kind-Beziehung</h1>
+  
+    <figure id="img-div">
+      <img src="http://www.einelternteil.ch/images/Kind/Urlaub-Vater-Kind.jpg" id="image">
+      <figcaption id="img-caption">Eltern lieb Ihre kinders</figcaption>
+    </figure>
+  </div>
+
+  <div id="tribute-info">
+    <p>Die Eltern-Kind-Beziehung ist die soziale und emotionale Beziehung zwischen einem Elternteil und dem eigenen Kind. Sie ist eine häufig untersuchte Zweierbeziehung. Man unterscheidet manchmal nach dem Geschlecht des Elternteils Mutter-Kind-Beziehung und Vater-Kind-Beziehung sowie zusätzlich nach dem Geschlecht des Kindes Vater-Sohn-Beziehung, Mutter-Tochter-Beziehung, Vater-Tochter-Beziehung, Mutter-Sohn-Beziehung. Ist der Sohn oder die Tochter erwachsen, wird meist eine der letztgenannten Bezeichnungen verwendet.
+Vater mit Tochter
+
+In der Familientherapie und -soziologie werden die beiden Eltern-Kind-Beziehungen auch zusammen mit der elterlichen Paarbeziehung als Vater-Mutter-Kind-Beziehung und somit als Triade (Dreierbeziehung) betrachtet.
+
+Es handelt sich bei der Eltern-Kind-Beziehung von Beginn an um eine ungleiche Beziehung: der Säugling ist in seinem Überleben von der Beziehung zu Mutter, Vater oder betreuender Bezugsperson existenziell abhängig, wobei im Verlauf von Kindheit und Adoleszenz eine zunehmende Individuation stattfindet. In westlichen Gesellschaftsformen sind im Allgemeinen die Eltern vorrangig für die Erziehung des Kindes verantwortlich, und das Kind bleibt bis zur Volljährigkeit in elterlicher Obhut. So sind Eltern-Kind-Beziehungen im Zusammenspiel mit anderen Faktoren wie der Geschwisterkonstellation, Vorbildern, Peer Groups und Einfluss der Massenmedien prägend für die Entwicklung des Kindes. </p>
+    
+    <a href="https://de.wikipedia.org/wiki/Eltern-Kind-Beziehung" target="_blank" id="tribute-link">more to Read...</a>
+    
+  </div>
+</min>
