@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Designing_success</title>
+    
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js">
+    </script> 
+    </head>
+    <style>
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+h1 { font-size: 32px; }
+
+a {
+	background-color: #DCDCDC;
+	color: #008CBC;
+	text-decoration: none;
+}
+
+nav a{
+    background-color:initial; 
+}
+#Reference a {
+    background-color:coral;
+}
+
+nav a:hover {     
+  	color: #ffffff;
+}
+
+nav {
+	background: rgb(16, 213, 147);
+	color: #FFFFFF;
+	left: 0;
+	position: relative;
+	right: 0;
+	top: 0;
+}
+nav:active{
+    color: coral;
+}
+
+nav header {
+	font-size: 20px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+
+nav ul {
+	background-color: #42a3ed;
+	height: 144px;
+	list-style: none;
+	margin: 0;
+	overflow: auto;
+	padding: 0;
+}
+
+nav li {
+	border-bottom: 1px solid #FFFFFF;
+	font-size: 18px;
+	padding: 20px 0 5px 20px;
+    text-align:left;
+}
+
+nav li:last-child {
+	border-bottom: none;
+}
+
+ul:last-child {
+	padding-bottom: 5px;
+}
+
+main {
+	padding: 0 20px 20px;
+}
+
+pre {
+  border-left: 3px solid #7b7b7b;
+}
+
+dd {
+	margin-bottom: 6px;
+}
+
+dt {
+	margin-bottom: 2px;
+}
+
+@media (min-width: 815px) {
+	nav {
+		height: 100%;
+		position: fixed;
+		width: 300px;
+	}
+	nav ul {
+		height: 100%;
+		overflow-y: auto;
+	}
+	main {
+		left: 300px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		padding-left: 20px;
+	}
+}
+
+    </style>
+<nav id="navbar">
+	<header>CSS Transitions Documentation</header>
+	<ul>
+		<li><a href="#CSS_Transitions" class="nav-link">CSS Transitions</a></li>
+        <li><a href="#Using_CSS_transitions" class="nav-link">Using CSS transitions</a></li>
+        <li><a href="#transition" class="nav-link">transition</a></li>
+        <li><a href="#transition-delay" class="nav-link">transition-delay</a></li>
+        <li><a href="#transition-duration" class="nav-link">transition-duration</a></li>
+        <li><a href="#transition-property" class="nav-link">transition-property</a></li>
+        <li><a href="#transition-timing-function" class="nav-link">transition-timing-function</a></li>
+		<li><a href="#Reference" class="nav-link">Reference</a></li>
+	</ul>
+</nav>
+<main id="main-doc">
+	<section class="main-section" id="CSS_Transitions">
+        <header>
+            <h1>CSS Transitions</h1>
+        </header>
+        <article>
+            <p>CSS Transitions is a module of CSS that lets you create gradual transitions between the values of specific CSS properties. The behavior of these transitions can be controlled by specifying their timing function, duration, and other attributes.</p>
+        </article>
+	</section>
+	<section class="main-section" id="Using_CSS_transitions">
+        <header>
+            <h2>Using CSS transitions</h2>
+        </header>
+        <article>
+            <p>CSS transitions provide a way to control animation speed when changing CSS properties. Instead of having property changes take effect immediately, you can cause the changes in a property to take place over a period of time. For example, if you change the color of an element from white to black, usually the change is instantaneous. With CSS transitions enabled, changes occur at time intervals that follow an acceleration curve, all of which can be customized.</p>
+            <p>Animations that involve transitioning between two states are often called implicit transitions as the states in between the start and final states are implicitly defined by the browser.</p>
+            <p>CSS transitions let you decide which properties to animate (by listing them explicitly), when the animation will start (by setting a delay), how long the transition will last (by setting a duration), and how the transition will run (by defining a timing function, e.g. linearly or quick at the beginning, slow at the end).</p>
+            <h2>Which CSS properties can be transitioned?</h2>
+            <p>The Web author can define which property has to be animated and in which way. This allows the creation of complex transitions. As it doesn't make sense to animate some properties, the list of animatable properties is limited to a finite set.</p>
+            <p>Note: The set of properties that can be animated is changing as the specification develops.</p>
+            <p>The auto value is often a very complex case. The specification recommends not animating from and to auto. Some user agents, like those based on Gecko, implement this requirement and others, like those based on WebKit, are less strict. Using animations with auto may lead to unpredictable results, depending on the browser and its version, and should be avoided.</p>
+            <h2>Defining transitions</h2>
+            <p>CSS Transitions are controlled using the shorthand transition property. This is the best way to configure transitions, as it makes it easier to avoid out of sync parameters, which can be very frustrating to have to spend lots of time debugging in CSS.</p>
+            <p>You can control the individual components of the transition with the following sub-properties:</p>
+            <p>(Note that these transitions loop infinitely only for the purpose of our examples; CSS transitions only visualize a property change from start to finish. If you need visualizations that loop, look into the CSS animation property.)</p>
+                <dl>
+                    <dt><a href="#transition-property">transition-property</a></dt>
+                    <dd>Specifies the name or names of the CSS properties to which transitions should be applied. Only properties listed here are animated during transitions; changes to all other properties occur instantaneously as usual.</dd>
+                    <dt><a href="#transition-duration">transition-duration</a></dt>
+                    <dd>Specifies the duration over which transitions should occur. You can specify a single duration that applies to all properties during the transition, or multiple values to allow each property to transition over a different period of time.</dd>
+                    <dt><a href="#transition-timing-function">transition-timing-function</a></dt>
+                    <dd>Specifies a function to define how intermediate values for properties are computed. Timing functions determine how intermediate values of the transition are calculated. Most timing functions can be specified by providing the graph of the corresponding function, as defined by four points defining a cubic bezier. You can also choose easing from Easing Functions Cheat Sheet.</dd>
+                    <dt><a href="#transition-delay">transition-delay</a></dt>
+                    <dd>Defines how long to wait between the time a property is changed and the transition actually begins.</dd>
+                </dl>
+                <p>The shorthand CSS syntax is written as follows:</p>
+            <pre class="line-numbers">
+                <code class="language-css">div {transition: &lt;property&gt; &lt;duration&gt; &lt;timing-function&gt; &lt;delay&gt;;}</code>
+            </pre>
+            <h2>Examples</h2>
+                <h3>Simple example</h3>
+                <p>This example performs a four-second font size transition with a two-second delay between the time the user mouses over the element and the beginning of the animation effect:</p>
+            <pre class="line-numbers">
+            <code class="language-css">
+                #delay {
+                        font-size: 14px;
+                        transition-property: font-size;
+                        transition-duration: 4s;
+                        transition-delay: 2s;
+                        }
+                #delay:hover {
+                        font-size: 36px;
+                        }
+            </code>
+            </pre>
+            <h3>Multiple animated properties example</h3>
+            <h4>CSS Content</h4>
+            <pre class="line-numbers">
+                <code class="language-css">
+                    .box {
+                        border-style: solid;
+                        border-width: 1px;
+                        display: block;
+                        width: 100px;
+                        height: 100px;
+                        background-color: #0000FF;
+                        -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
+                        transition: width 2s, height 2s, background-color 2s, transform 2s;
+                        }
+                    .box:hover {
+                        background-color: #FFCCCC;
+                        width: 200px;
+                        height: 200px;
+                        -webkit-transform: rotate(180deg);
+                        transform: rotate(180deg);
+                        }
+                </code>
+            </pre>
+            <h3>When property value lists are of different lengths</h3>
+            <p>If any property's list of values is shorter than the others, its values are repeated to make them match. For example:</p>
+            <pre class="line-numbers">
+                <code class="language-css">
+                    div {
+                        transition-property: opacity, left, top, height;
+                        transition-duration: 3s, 5s;
+                        }
+                </code>
+            </pre>
+            <p>This is treated as if it were:</p>
+            <pre class="line-numbers">
+                <code class="language-css">
+                    div {
+                        transition-property: opacity, left, top, height;
+                        transition-duration: 3s, 5s, 3s, 5s;
+                        }
+                </code>
+            </pre>
+            <p>Similarly, if any property's value list is longer than that for transition-property, it's truncated, so if you have the following CSS:</p>
+            <pre class="line-numbers">
+                <code class="language-css">
+                    div {
+                        transition-property: opacity, left;
+                        transition-duration: 3s, 5s, 2s, 1s;
+                        }
+                </code>
+            </pre>
+            <p>This gets interpreted as:</p>
+            <pre class="line-numbers">
+                <code class="language-css">
+                    div {
+                        transition-property: opacity, left;
+                        transition-duration: 3s, 5s;
+                        }
+                </code>
+            </pre>
+            <h3>Using transitions when highlighting menus</h3>
+            <p>A common use of CSS is to highlight items in a menu as the user hovers the mouse cursor over them. It's easy to use transitions to make the effect even more attractive. First, we set up the menu using HTML:</p>
+            <pre class="line-numbers">
+                <code class="language-html">&lt;nav&gt;
+                    &lt;a href="#"&gt;Home&lt;/a&gt;
+                    &lt;a href="#"&gt;About&lt;/a&gt;
+                    &lt;a href="#"&gt;Contact Us&lt;/a&gt;
+                    &lt;a href="#"&gt;Links&lt;/a&gt; &lt;/nav&gt;
+                </code>
+            </pre>
+                        <p>Then we build the CSS to implement the look and feel of our menu. The relevant portions are shown here:</p>
+            <pre class="line-numbers">
+                <code class="language-css">
+                        a {
+                        color: #fff;
+                        background-color: #333;
+                        transition: all 1s ease-out;
+                        }
+
+                        a:hover,
+                        a:focus {
+                            color: #333;
+                            background-color: #fff;
+                        }
+                </code>
+            </pre>
+            <p>This CSS establishes the look of the menu, with the background and text colors both changing when the element is in its :hover and :focus states.</p>
+		</article>
+	</section>
+	<section class="main-section" id="transition">
+		<header>
+		    <h2>transition</h2>
+		</header>
+		<article>
+		    <p>The transition CSS property is a shorthand property for <a href="#transition-property">transition-property</a>, <a href="#transition-duration">transition-duration</a>, <a href="#transition-timing-function">transition-timing-function</a>, and <a href="#transition-delay">transition-delay</a>.</p>
+            <p>Transitions enable you to define the transition between two states of an element. Different states may be defined using pseudo-classes like :hover or :active or dynamically set using JavaScript.</p>
+			<h3>Syntax</h3>
+                <pre class="line-numbers">
+                    <code class="language-css">
+                        transition: margin-right 4s ease-in-out 1s;
+                        transition: margin-right 4s, color 1s;
+                        transition: all 0.5s ease-out;
+                        transition: inherit;
+                        transition: initial;
+                        transition: unset;
+                    </code>
+                </pre>
+                <p>The transition property is specified as one or more single-property transitions, separated by commas.</p>
+                <p>Each single-property transition describes the transition that should be applied to a single property (or the special values all and none). It includes:</p>
+                <ul>
+                    <li>zero or one value representing the property to which the transition should apply. This may be any one of:
+                        <ul>
+                            <li>the keyword none</li>
+                            <li>the keyword all</li>
+                            <li>a &lt;custom-ident&gt; naming a CSS property.</li>
+                        </ul>
+                    </li>
+                    <li>zero or one &lt;single-transition-timing-function&gt; value representing the timing function to use</li>
+                    <li>zero, one, or two &lt;time&gt; values. The first value that can be parsed as a time is assigned to the transition-duration, and the second value that can be parsed as a time is assigned to transition-delay.</li>
+                </ul>
+                <p>See how things are handled when lists of property values aren't the same length. In short, extra transition descriptions beyond the number of properties actually being animated are ignored.</p>
+                <h3>Formal syntax</h3>
+                <pre class="line-numbers">
+                    <code class="language-*">
+                        ul li {
+                            padding-left: 2rem;
+                            background-image: url(star.svg);
+                            background-position: 0 0;
+                            background-size: 1.6rem 1.6rem;
+                            background-repeat: no-repeat;
+                            }
+                    </code>
+                </pre>
+        </article>
+    </section>
+    <section class="main-section" id="transition-delay">
+            <header>
+                <h2>transition-delay</h2>
+            </header>
+            <article>
+                <p>The transition-delay CSS property specifies the amount of time to wait before starting a property's transition effect when its value changes.</p>
+                <p>The delay may be zero, positive, or negative:</p>
+                <ul>
+                    <li>A value of 0s (or 0ms) will begin the transition effect immediately.</li>
+                    <li>A positive value will delay the start of the transition effect for the given length of time.</li>
+                    <li>A negative value will begin the transition effect immediately, and partway through the effect. In other words, the effect will be animated as if it had already been running for the given length of time.</li>
+                </ul>
+                <p>You may specify multiple delays, which is useful when transitioning multiple properties. Each delay will be applied to the corresponding property as specified by the transition-property property,</p>
+                <h3>Syntax</h3>
+            <pre class="line-numbers">
+                <code class="language-css">
+                    dic{
+                        transition-delay: 3s;
+                        transition-delay: 2s, 4ms;
+                        transition-delay: inherit;
+                        transition-delay: initial;
+                        transition-delay: unset;
+                     }
+                            
+                </code>
+            </pre>
+        </article>
+    </section>
+    <section class="main-section" id="transition-duration">
+        
+        <header>
+            <h2>transition-duration</h2>
+        </header>
+        <article> 
+            <p>The transition-duration CSS property specifies the number of seconds or milliseconds a transition animation should take to complete. By default, the value is 0s, meaning that no animation will occur.</p>
+            <p>You may specify multiple durations; each duration will be applied to the corresponding property as specified by the transition-property property, which acts as a master list. If there are fewer durations specified than in the master list, the user agent repeat the list of durations. If there are more durations, the list is simply truncated to the right size. In both case the CSS declaration stays valid.</p>
+            <h3>Syntax</h3>
+            <pre class="line-numbers">
+                <code class="language-css">
+                    div{
+                        transition-duration: 6s;
+                        transition-duration: 120ms;
+                        transition-duration: 1s, 15s;
+                        transition-duration: 10s, 30s, 230ms;
+                    }
+                </code>
+            </pre>
+        </article>
+    </section>
+    <section class="main-section" id="transition-property">
+        <header>
+            <h2>transition-property</h2>
+        </header>
+        <article>
+            <p>The transition-property CSS property specifies the CSS properties to which a transition effect should be applied.</p>
+            <p>Note: The set of properties that can be animated is subject to change. As such, you should avoid including any properties in the list that don't currently animate, as someday they might, causing unexpected results.</p>                      
+            <h3>Syntax</h3>
+            <pre class="line-numbers">
+                <code class="language-css">
+                    div{
+                        transition-property: none;
+                        transition-property: all;
+                        transition-property: test_05;
+                        transition-property: -specific;
+                        transition-property: sliding-vertically;
+                    }
+                </code>           
+            </pre>
+        </article>
+    </section>
+    <section class="main-section" id="transition-timing-function">
+        <header>
+            <h2>transition-timing-function</h2>
+        </header>
+        <article>
+            <p>The transition-timing-function CSS property is used to describe how the intermediate values of the CSS properties being affected by a transition effect are calculated.</p>
+            <p>This, in essence, lets you establish an acceleration curve so that the speed of the transition can vary over its duration.</p>
+            <p>You may specify multiple timing functions; each one will be applied to the corresponding property as specified by the transition-property property, which acts as a master list. If there are fewer functions specified than in the master list, missing values are set to the initial value (ease). If there are more timing functions, the list is simply truncated to the right size. In both cases, the CSS declaration stays valid.</p>
+            <h3>Syntax</h3>
+            <pre class="line-numbers">
+                <code class="language-css">
+                    div{
+                        transition-timing-function: ease;
+                        transition-timing-function: ease-in;
+                        transition-timing-function: ease-out;
+                    }      
+                </code>
+            </pre>
+        </article>
+    </section>
+    <section class="main-section" id="Reference">
+        <header>
+            <h2>Reference</h2>
+        </header>
+        <article>
+            <p>All the documentation on this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions" target="_blank">MDN</a>.</p>
+        </article>
+    </section>
+</main>
+</body>
+</html>
