@@ -1,0 +1,119 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+<header class="portfolio-header">
+  <nav id="navbar">
+    <ul>
+      <li><a class="same" href="#welcome-section">Welcome</a></li>
+      <li><a class="same" href="https://https://github.com/Npradheepan/web-images/new/master">GitHup</a></li>
+      <li><a class="same" href="https://codepen.io/">Codepen</a></li>
+    </lu>
+  </nav>
+</header>
+
+<section id="welcome-section">
+  <h1>Welcome TO My Page<h1>
+</section>
+    
+ <section id="projects" class="project-title">
+   <h2 id="project-header">Here is My Free code camp projects</h2>
+   
+<a id="profile-link" href="https://codepen.io/theepan/pen/ZEzMqBq" target="_blank">
+    <img src="https://i.pinimg.com/564x/0b/7c/a9/0b7ca9b8c932092f6b525bd664afd071.jpg">
+    <div class="project-tile">Tribute Page</div>
+</a>
+     
+<a id="profile-link" href="https://codepen.io/theepan/pen/BaBENdb" targe="_blank">
+   <img src="https://i.pinimg.com/564x/0b/7c/a9/0b7ca9b8c932092f6b525bd664afd071.jpg"> 
+   <div class="project-tile">Landing Page</div>
+</a>
+   
+<a id="profile-link" href="https://codepen.io/theepan/pen/oNNjgZY" targe="_blank">
+   <img src="https://i.pinimg.com/564x/0b/7c/a9/0b7ca9b8c932092f6b525bd664afd071.jpg">
+   <div class="project-tile">Technical Document</div>
+</a>
+ 
+  <a id="profile-link" href="https://codepen.io/theepan/pen/pozGYxK" targe="_blank">
+   <img src="https://i.pinimg.com/564x/0b/7c/a9/0b7ca9b8c932092f6b525bd664afd071.jpg">
+   <div class="project-tile">Survey Form</div>
+</a>
+ </section>
+
+//====================================section break========================================//
+ 
+ 
+ html, body {
+  text-align:center;
+  height:100%;
+  width:100%;
+  background:rgb(0, 0, 0);
+}
+
+.portfolio-header {
+  width:100%;
+  height:100%;
+  background-size:cover;
+  Background-position:center right;
+background-image:url(https://i0.wp.com/sociallover.net/wp-content/uploads/2019/04/woman-3214594_1920.jpg);  
+}
+
+nav ul li {
+  list-style:none;
+  text-align:right;
+  display:inline-block;
+  margin:10px;
+}
+ 
+#navbar {
+  position:fixed;
+  top:0;
+  width:100%;
+}
+
+img{
+  width:170px;
+  height:100%;
+}
+.same{
+  font-family: "Times New Roman", Times, serif;
+  font-size:24px;
+  color:rgb(218, 132, 28);
+}
+a {
+  
+  text-decoration: none;
+  color:rgb(36, 172, 236);
+  margin:20px;
+}
+
+a:hover {
+  color:red;
+}
+
+#welcome-section {
+  text-align:center;
+  height:100%;
+  min-height:100px;
+  background-image:url(https://picserio.com/data/out/450/beautiful-4k-wallpapers_6523532.jpg);
+  background-size:cover;
+}
+
+#projects { 
+  text-align:center;
+}
+
+.project-title {
+  height:100%;
+  width:100%;
+  padding-top:15em;
+}
+
+#profile-link {
+  display:inline-block;
+  overflow:hidden;
+  text-decoration: none;
+}
+
+@media (max-height: 100%)
+{
+  #welcome-section
+}
